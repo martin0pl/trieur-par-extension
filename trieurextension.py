@@ -36,7 +36,8 @@ for s in contenu_dossier:
 
 # Création d'un dossier pour chaque extension
 for s in extensions:
-    os.makedirs("./Downloads/" + s)
+    if not os.path.exists("./Downloads/" + s):
+        os.makedirs("./Downloads/" + s)
 
 # Délacement des fichiers dans le bon repertoire
 for fichier in contenu_dossier:
